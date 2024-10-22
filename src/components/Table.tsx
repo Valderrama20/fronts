@@ -29,7 +29,7 @@ const Table: React.FC<TableProps> = ({ data, setForm, formState }) => {
                   >
                     <option value="">Seleccionar</option>
                     {data.selectOptions.map((option, index) => {
-                      return <option key={index + 1}>{option}</option>;
+                      return <option className="bg-white" key={index + 1}>{option}</option>;
                     })}
                   </select>
                 </td>

@@ -1,6 +1,8 @@
 import React, { ChangeEvent, FormEvent } from "react"
 import Input from "./Input";
 import Button from "./Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 interface InitialFormProps {
     setFamilyData: React.Dispatch<React.SetStateAction<{ name: string; direction: string }>>
@@ -25,7 +27,7 @@ const InitialForm = ({ setFamilyData, familyData, next }: InitialFormProps) => {
         <form onSubmit={ nextForm } className="flex flex-col">
             <Input label="Nombre" id="familyName" onChange={handleInput} value={familyData.name} name="name"/>
             <Input label="Direccion" id="familyAddress" onChange={handleInput} value={familyData.direction} name="direction" />
-            <Button type="submit">Siguiente</Button>
+            <Button type="submit">Siguiente <FontAwesomeIcon icon={faArrowRight} /></Button>
         </form>
         </div>
     </div>
