@@ -41,13 +41,7 @@ export default function Tables() {
           <Button onClick={() => generetaPdf({familyData,formState})}>Crear PDF</Button>
         )}
       </div>
-      <Button onClick={() => console.log(formState)}>Ver datos</Button>
+      {/* <Button onClick={() => console.log(formState)}>Ver datos</Button> */}
     </div>
-    // <div className="flex flex-col " id="Tables">
-    //   {tables.map((table, index) => {
-    //     return <Table data={table} setForm={setFormState} key={index + 1} />;
-    //   })}
-    //   <button onClick={generetaPdf}>Decargar PDF</button>
-    // </div>
   );
 }

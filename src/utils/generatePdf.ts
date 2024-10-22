@@ -35,15 +35,19 @@ const generetaPdf = async ({ formState, familyData }: GeneretaPdfProps) => {
     // Columnas y filas
     for (const key in formState) {
       const head = [[{ content: key, colSpan: 2 }]];
+      console.log(key, formState[key])
+
       const body = Object.entries(formState[key]).filter(
         (product) => !!product[1]
       );
-      if (!body.length) break;
-      autoTable(doc, { head, body, startY });
-
-      startY = doc.lastAutoTable?.finalY
-        ? doc.lastAutoTable?.finalY + 10
-        : startY;
+      
+      if (body.length){
+        autoTable(doc, { head, body, startY });
+        startY = doc.lastAutoTable?.finalY
+          ? doc.lastAutoTable?.finalY + 10
+          : startY;
+      }
+      
     }
 
     doc.save("prueba.pdf");
